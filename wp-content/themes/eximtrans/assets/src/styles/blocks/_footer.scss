@@ -1,0 +1,104 @@
+.footer{
+  padding: 50px 0;
+
+  &_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo{
+    display: flex;
+    align-items: center;
+    
+
+    a{
+      opacity: .6;
+      transition: opacity .3s ease;
+
+      &:hover{
+        opacity: 1;
+        transition: opacity .3s ease;
+      }
+    }
+  }
+
+  &-social-content.social{
+    display: flex;
+    align-items: center;
+
+    ul{
+      margin-top: 0;
+      display: none;
+
+      @media(min-width: $tablet) {
+        display: flex;
+      }
+    }
+
+    span{
+      display: none;
+
+      @media(min-width: $tablet) {
+        display: block;
+      }
+    }
+
+    .top_button{
+      margin-left: 50px;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.13px;
+      opacity: .6;
+      transition: opacity .3s ease;
+
+      &:after{
+        content: '';
+        width: 45px;
+        height: 45px;
+        margin-left: 15px;
+        background: #121313 url('../images/arrow_top.svg') no-repeat center center;
+      }
+
+      &:hover{
+        opacity: 1;
+        transition: opacity .3s ease;
+      }
+    }
+  }
+
+  span{
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.13px;
+    display: block;
+    opacity: .6;
+    transition: opacity .3s ease;
+
+    &:hover{
+      opacity: 1;
+      transition: opacity .3s ease;
+    }
+
+    &.copyrait{
+
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      max-width: 100%;
+      margin: 0;
+      text-align: center;
+
+
+      @media(min-width: $tablet) {
+        position: static;
+        text-align: left;
+        max-width: 150px;
+        margin-left: 50px;
+      }
+    }
+  }
+}
