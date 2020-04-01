@@ -37,30 +37,30 @@ proxyurl = env.proxyurl;
 
 var path = {
     build: {
-        js:         '/js/',
-        styles:     '/styles/',
-        img:        '/images/',
-        fonts:      '/fonts/'
+        js:         'js/',
+        styles:     'styles/',
+        img:        'images/',
+        fonts:      'fonts/'
     },
     src: {
-        js:         '/assets/src/js/*.js',
-        styles:     '/assets/src/styles/*.scss',
-        img:        '/assets/src/images/*.*',
-        fonts:      '/assets/src/fonts/*.*'
+        js:         'assets/src/js/*.js',
+        styles:     'assets/src/styles/*.scss',
+        img:        'assets/src/images/*.*',
+        fonts:      'assets/src/fonts/*.*'
     },
     watch: {
-        js:         '/assets/src/js/*.js',
-        img:        '/assets/src/images/*.*',
-        styles:     '/assets/src/styles/**/*.scss',
-        fonts:      '/assets/src/fonts/*.*',
+        js:         'assets/src/js/*.js',
+        img:        'assets/src/images/*.*',
+        styles:     'assets/src/styles/**/*.scss',
+        fonts:      'assets/src/fonts/*.*',
         php:    [
-            '/*.php',
-            '/inc/**/*.php',
-            '/parts/**/*.php',
-            '/templates/**/*.php'
+            '*.php',
+            'inc/**/*.php',
+            'parts/**/*.php',
+            'templates/**/*.php'
         ]
     },
-    clean:    '/assets/build'
+    clean:    'assets/build'
 };
 
 
