@@ -732,7 +732,13 @@ textarea {
       -webkit-transition: right .3s ease;
       transition: right .3s ease; }
 
-.language-item {
+.lang-list {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center; }
+
+.lang-item {
   margin: 0 5px; }
 
 .tel-link {

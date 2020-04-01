@@ -94,7 +94,12 @@
   }
 }
 
-.language{
+.lang{
+  &-list{
+    display: flex;
+    align-items: center;
+  }
+
   &-item{
     margin: 0 5px;
   }

@@ -46,13 +46,13 @@
 				</li>
 			</ul>
 
-			<ul class="language-list">
-				<li class="language-item"><a href="#">Ru</a></li>
-				<li class="language-item"><a href="#">En</a></li>
+			<ul class="lang-list">
+				<?php pll_the_languages();?>
 			</ul>
 
 			<ul class="tel-info">
-				<li class="tel-item"><a href="tel:+38(093) 743 51 05" class="tel-link">+38(093) 743 51 05</a></li>
+				<li class="tel-
+				item"><a href="tel:+38(093) 743 51 05" class="tel-link">+38(093) 743 51 05</a></li>
 				<li class="tel-item"><a href="tel:+38(057) 714 26 47" class="tel-link">+38(057) 714 26 47</a></li>
 			</ul>
 		</div>
