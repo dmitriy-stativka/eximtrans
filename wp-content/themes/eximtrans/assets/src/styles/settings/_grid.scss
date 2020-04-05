@@ -22,17 +22,17 @@
     max-width: 1300px;
     padding: 0 25px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 
     @media(max-width: 1600px) {
       max-width: 1024px;
+      padding: 0 15px;
     }
 
 
     @media(min-width: $desktop) {
-      z-index: 2;
-      position: relative;
       padding-left: 50px;
-
     }
 
     @media(min-width: $tablet) {
@@ -55,6 +55,14 @@
   }
 
   &_col {
+
+    &--1-1 {
+      width: 100%;
+
+      .cf7sg-popup{
+        margin: 0 auto;
+      }
+    }
 
     &--1-2 {
       width: 50%;

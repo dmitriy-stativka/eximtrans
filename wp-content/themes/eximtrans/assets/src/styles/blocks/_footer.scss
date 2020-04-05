@@ -3,8 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 600px;
-
+  min-height: 800px;
+  overflow: hidden;
   background: url('../images/footer_bg.jpg') no-repeat center center;
   background-size: cover;
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
@@ -100,7 +100,39 @@
     display: block;
   }
 
-    @media(min-width: $tablet) {
-      
+    @media(max-width: $tablet) {
+      .cf7sg-popup{
+        margin: 0 auto 25px auto;
+      }
+
+      &-info{
+        max-width: 320px;
+        margin: 0 auto;
+
+        &-tel a{
+          font-size: 18px;
+        }
+      }
+    }
+
+    @media(max-width: 600px) {
+      height: initial;
+      min-height: initial;
+      clip-path: none;
+      padding: 50px 0;
+
+      .cf7sg-popup{
+        max-width: 100%;
+        width: 100%;
+      }
+
+      &-span{
+        margin-top: 50px;
+      }
+
+
+      input[type="submit"].wpcf7-form-control.wpcf7-submit{
+        margin-top: 25px;
+      }
     }
 }

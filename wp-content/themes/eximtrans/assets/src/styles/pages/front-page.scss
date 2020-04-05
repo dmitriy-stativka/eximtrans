@@ -5,6 +5,14 @@
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     position: relative;
     min-height: 800px;
+
+    @media(max-width: 600px) {
+        min-height: 700px;
+    }
+
+  @media(max-width: 600px) {
+    clip-path: none;
+  }
     
     &:after{
         content: '';
@@ -33,6 +41,14 @@
             color: #fff;
             margin-bottom: 45px;
             font-size: 4.2vw;
+
+          @media(max-width: 990px) {
+              font-size: 50px;
+          }
+
+            @media(max-width: 600px) {
+                font-size: 36px!important;
+            }
         }
 
         .description{
@@ -40,6 +56,11 @@
             max-width: 550px;
             margin-bottom: 100px;
             color: #fff;
+
+            @media(max-width: 600px) {
+                line-height: 21px;
+                margin-bottom: 50px;
+            }
         }
     }
 
@@ -67,6 +88,16 @@
         align-items: flex-start;
         justify-content: space-between;
         margin: 100px -30px 0 -30px;
+
+        @media(max-width: 990px) {
+            margin: 50px 0px 0 0px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media(max-width: 600px) {
+            grid-template-columns: 1fr!important;
+        }
     }
     
     &-item{
@@ -75,9 +106,25 @@
         width: 100%;
         margin: 0 30px;
 
+        @media(max-width: 990px) {
+            margin: 0 auto;
+        }
+
+        @media(max-width: 600px) {
+            margin: 35px auto 0 auto!important;
+
+            &:first-child{
+                margin-top: 0!important;
+            }
+        }
+
         &-description{
             line-height: 33px;
             margin-top: 50px;
+
+            @media(max-width: 600px) {
+                margin-top: 20px;
+            }
         }
     }
 
@@ -103,6 +150,7 @@
         flex-direction: column;
         transition: color .3s ease;
         font-weight: 800;
+        height: 115px;
 
         &:before{
             content: '';
@@ -138,11 +186,15 @@
 .popup{
     display: inline-block;
     vertical-align: middle;
-    max-width: 680px;
+    max-width: 570px;
     width: 100%;
     position: relative;
     z-index: 100;
     margin-top: 40px;
+
+    @media(max-width: 600px) {
+        width: 90%;
+    }
 
     &__overlay {
         position: fixed;
@@ -237,6 +289,11 @@
             color: #fff;
             font-weight: 100;
             position: relative;
+
+            @media(max-width: 600px) {
+                font-size: 28px;
+            }
+
             
              &:after{
                 content:"";
@@ -270,5 +327,38 @@
         padding: 0;
         font-size: 13px;
     }
+
+
+    .wpcf7-form{
+        margin: 0 auto;
+    }
 }
 /*============== end popup ===============*/
+
+.call-back{
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 99;
+    animation: phone .8s ease-in-out infinite;     
+    box-shadow: 0 0 10px rgba(0,0,0, .6);
+    border-radius: 50%;
+    
+    @media(max-width: 600px) {
+        right: 20px;
+        bottom: 20px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+
+@keyframes phone {
+    0%, 100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(21deg);
+    }
+}

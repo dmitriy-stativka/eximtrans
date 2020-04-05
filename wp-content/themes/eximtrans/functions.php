@@ -113,32 +113,56 @@ function eximtrans_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	
 }
 add_action( 'widgets_init', 'eximtrans_widgets_init' );
 
 
-
-
-
-
-
-/**
- * Enqueue scripts and styles.
- */
 function eximtrans_scripts() {
 	wp_enqueue_style( 'eximtrans-style', get_stylesheet_uri() );
 	wp_enqueue_style('wp_play_style', get_stylesheet_directory_uri().'/styles/styles.min.css');
 
-
 	wp_enqueue_style('animate', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css');
 	wp_register_script('jquery', 'https://code.jquery.com/jquery-3.3.1.min.js');
 	wp_enqueue_script('jquery');
-
-	
 }
 add_action( 'wp_enqueue_scripts', 'eximtrans_scripts' );
 
+pll_register_string('Отправить заявку', 'quote');
+pll_register_string('О компании', 'about');
+pll_register_string('Наши услуги', 'services');
+pll_register_string('Контакты', 'contacts');
+pll_register_string('Мы перезвоним', 'request');
+
+pll_register_string('404 текст', 'errorText');
+pll_register_string('404 кнопка', 'errorButton');
 
 
 
-
+register_post_type('services', array(
+    'labels'             => array(
+      'name'               => 'Услуги', // Основное название типа записи
+      'singular_name'      => 'Услуги', // отдельное название записи типа Book
+      'add_new'            => 'Добавить услугу',
+      'add_new_item'       => 'Добавить новую услугу',
+      'edit_item'          => 'Редактировать услугу',
+      'new_item'           => 'Новая услуга',
+      'view_item'          => 'Посмотреть услугу',
+      'search_items'       => 'Найти услугу',
+      'not_found'          => 'Не найдено',
+      'not_found_in_trash' => 'В корзине ничего не найдено',
+      'parent_item_colon'  => '',
+      'menu_name'          => 'Услуги'
+      ),
+    'public'             => true,
+    'publicly_queryable' => true,
+    'show_ui'            => true,
+    'show_in_menu'       => true,
+    'query_var'          => true,
+    'rewrite'            => true,
+    'capability_type'    => 'post',
+    'has_archive'        => false,
+    'hierarchical'       => false,
+    'menu_position'      => null,
+    'supports'            => array( 'title', 'comments'  )  // 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields',
+  ));

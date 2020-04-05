@@ -1,26 +1,64 @@
 .error{
   &-page{
     height: 100%;
+    width: 100%; 
     display: flex;
     align-items: center;
-    max-width: 700px;
-    margin: 0 auto;
+    flex-direction: column;
     flex-grow: 1;
+    background: url('/wp-content/themes/eximtrans/images/error_bg.jpg') no-repeat top center;
+    background-size: cover;
+    position: relative;
+    justify-content: center;
+    
+    .flex_container{
+      z-index: 999;
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0,0,0, .7);
+      z-index: 8;
+    }
+  }
+
+  &-text{
+    max-width: 480px;
     text-align: center;
 
-    span{
-      font-weight: 600;
-      font-size: 21px;
+    h2{
+      font-family: 'Nunito Sans';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 250px;
+      margin: 0;
+      color: #01222D;
     }
-    
-    b{
-      font: 700 130px/1 'Montserrat', sans-serif;
-      color: $orange;
-      display: block;
+
+    p{
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: #4F4F4F;
+      margin: 0;
     }
 
     a{
-      margin: 40px auto 0 auto;
+      background: #3682F3;
+      border-radius: 5px;
+      max-width: 350px;
+      width: 100%;
+      padding: 25px;
+      font-weight: 900;
+      transition: background .3s ease;
+      text-transform: uppercase;
+      display: block;
+      margin: 25px auto 0 auto;
     }
   }
 }

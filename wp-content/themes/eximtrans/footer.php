@@ -10,25 +10,38 @@
  */
 
 ?>
+<?php
+	wp_reset_query();
+?>
 	<footer class="footer">
 		<div class="flex_container">
 			<div class="flex_row flex_row-align-center">
-				<div class="flex_col--1-2 wow fadeInUp" data-wow-duration="1.5s">
-					<h3 class="footer-title wow fadeInUp" data-wow-duration="1.5s">Contact us</h3>
+				<div class="flex_col-tab--1-2 wow fadeInUp" data-wow-duration="1.5s">
+					<h3 class="footer-title wow fadeInUp" data-wow-duration="1.5s"><?php the_field( 'title_contacts' );?></h3>
 
 					<div class="footer-form wow fadeInUp" data-wow-duration="1.5s">
-						<?php echo do_shortcode('[contact-form-7 id="5" title="Форма"]'); ?>
+						<?php
+							if(pll_current_language() == 'ru'){
+								echo do_shortcode('[cf7form cf7key="form-rus"]');
+							}elseif(pll_current_language() == 'en'){
+								echo do_shortcode('[cf7form cf7key="form-eng"]');
+							}
+						?>
 					</div>
 
 				</div>
-				<div class="flex_col--1-2 wow fadeInUp" data-wow-duration="1.5s">
+				<div class="flex_col-tab--1-2 wow fadeInUp" data-wow-duration="1.5s">
 					<div class="footer-info">
-						<address class="footer-info-address">Ukraine, Kharkov, Nauky Ave. 60, office 321</address>
+						<address class="footer-info-address"><?php the_field( 'address');?></address>
+
 						<div class="footer-info-tel">
-							<a href="tel:+38(093) 743 51 05">+38(093) 743 51 05</a>
-							<a href="tel:+38(057) 714 26 47">+38(057) 714 26 47</a>
+						
+							<?php while ( have_rows('phone') ) : the_row(); ?>
+								<a href="tel:<?php the_sub_field('sub_phone') ?>"><?php the_sub_field('sub_phone') ?></a>
+							<?php endwhile; ?>
 						</div>
-						<a class="footer-info-mail" href="mailto:info@eximtrans.com.ua">info@eximtrans.com.ua</a>
+
+						<a class="footer-info-mail" href="mailto:<?php the_field( 'mail_general' );?>"><?php the_field( 'mail_general' );?></a>
 
 						<span class="footer-span">© 2020. All rights reserved.</span>
 					</div>
@@ -37,18 +50,28 @@
 		</div>
 	</footer>
 
+	<div class="call-back">
+		<a class="popup__toggle">
+			<img src="/wp-content/themes/eximtrans/images/call_back.svg" alt="">
+		</a>
+	</div>
 
 	<div class="popup__overlay">
         <span class="popup__close"><span></span></span>
 	    <div class="popup">
 	        <div class="popup_text_top">
 				<div class="title-h2">
-					Request CallBack
+					<?php pll_e('request'); ?>
 				</div>       
 			</div>
             <div class="popup-inner" id="wr_result_write_us">
-				
-				<?php  echo do_shortcode('[contact-form-7 id="5" title="Форма"]'); ?>
+				<?php
+					if(pll_current_language() == 'ru'){
+						echo do_shortcode('[cf7form cf7key="form-rus"]');
+					}elseif(pll_current_language() == 'en'){
+						echo do_shortcode('[cf7form cf7key="form-eng"]');
+					}
+				?>
 			</div>
 		</div>
 	</div>
@@ -98,7 +121,15 @@
             e.preventDefault();
         });
     });
+
+
+	$('.toggle-category').on('click', function(){
+		$('.toggle-category').toggleClass('open-category');
+		$('.category-list').toggleClass('show');
+	})
 </script>
+
+
 
 </body>
 </html>

@@ -29,11 +29,19 @@ body{
   max-width: 850px;
   margin: 150px auto 0 auto;
 
+  @media(max-width: 600px) {
+    margin: 100px auto 0 auto;
+  }
+
   &-h2{
     font-weight: 800;
     font-size: 40px;
     position: relative;
     margin-bottom: 30px;
+
+    @media(max-width: $tablet) {
+      font-size: 24px;
+    }
 
     &-line{
       &:before{
@@ -135,13 +143,12 @@ input {
 
 .wpcf7-form {
   max-width: 480px;
-  width: 100%;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   p {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-
     br{
       display: none;
     }
@@ -153,11 +160,13 @@ input {
 .wpcf7-form-control-wrap{
   width: 100%;
 
-  &.tel-233,
-  &.email-296{
-    width: 48%;
+  @media(min-width: 600px) { 
+    &.tel-233,
+    &.email-296{
+      width: 48%;
+    }
   }
-
+    
   input{
     display: block;
     width: 100%;
@@ -192,12 +201,12 @@ input {
   }
 }
 
-input[type="submit"]{
+.footer input[type="submit"].wpcf7-form-control.wpcf7-submit{
   opacity: 1;
   background: #3682F3;
   font-size: 16px;
   text-transform: uppercase;
-  margin: 50px auto 0 auto;
+  margin: 15px auto 0 auto;
   color: #fff;
   transition: background .3s ease;
   border-radius: 5px;
